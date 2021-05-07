@@ -5,6 +5,7 @@
 
 # To get started, we will need the requests and JSON library. We will import 
 # them into this file below. 
+# pip3 install requests
 import json
 import requests
 
@@ -13,8 +14,8 @@ import requests
 # to properly call this API. 
 # You can usually find this information in the API documentation for most API's
 
-name = "Rashed Rifat"
 URL = "https://9dontxvnf1.execute-api.us-east-2.amazonaws.com/alpha/record"
+name = "Rashed Rifat"
 TID = "08"
 hash_code = "H2aja86Knp"
 
@@ -24,6 +25,7 @@ hash_code = "H2aja86Knp"
 # which you can refer to find the format of the body. 
 # Here, we have supplied the format for you. 
 body = json.dumps({"full_name" : name, "TID" : TID, "hash" : hash_code})
+print(body)
 
 # We can also save our parameters in a parameters dictonary and pass it into
 # the params field for an API request. Let's take a look at this now.
@@ -33,7 +35,7 @@ parameters = {"full_name" : name, "TID" : TID, "hash" : hash_code}
 # through the requests library and store the response in a variable. 
 # Can you identify the type of request we are sending?
 API_response = requests.post(URL, data=body) 
-API_response = requests.post(URL, params=parameters)
+# API_response2 = requests.post(URL, params=parameters)
 
 # Finally, we can take a look at the response of the API by looking at the JSON
 # function of the variable.
